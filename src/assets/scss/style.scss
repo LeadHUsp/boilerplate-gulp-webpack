@@ -1,0 +1,31 @@
+@import '../../../node_modules/swiper/swiper.scss';
+@import '../../../node_modules/swiper/components/pagination/pagination.scss';
+@import '../../../node_modules/swiper/components/navigation/navigation.scss';
+@import '_fonts.scss';
+
+body {
+  font-family: 'Uni Neue', sans-serif;
+  font-size: 10px;
+  font-weight: normal;
+}
+.header {
+  font-size: 36px;
+  font-weight: bold;
+}
+.container {
+  width: 80%;
+  height: 400px;
+  margin: 0 auto;
+}
+.wrapper {
+  font-size: 28px;
+  color: #000;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+}

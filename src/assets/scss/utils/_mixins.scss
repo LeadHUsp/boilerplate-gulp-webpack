@@ -1,0 +1,11 @@
+@mixin fontLink($name, $path, $font-name, $weight, $style) {
+  @font-face {
+    font-family: $name;
+    src: url('#{$path}#{$font-name}.woff2') format('woff2'),
+      url('#{$path}#{$font-name}.woff') format('woff'),
+      url('#{$path}#{$font-name}.ttf') format('truetype');
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
