@@ -99,6 +99,7 @@ function css(cb) {
     .pipe(
       autoprefixer({
         cascade: true,
+        grid: 'autoplace',
       })
     )
     .pipe(cssbeautify())
@@ -191,9 +192,11 @@ function js(cb) {
             {
               test: /\.(js)$/,
               exclude: /(node_modules)/,
+
               loader: 'babel-loader',
+
               query: {
-                presets: ['@babel/preset-env'],
+                presets: ['@babel/preset-env', '@babel/preset-react'],
               },
             },
           ],
@@ -223,6 +226,20 @@ function jsWatch(cb) {
       webpackStream({
         mode: 'development',
         entry: { app: './src/assets/js/' },
+        module: {
+          rules: [
+            {
+              test: /\.(js)$/,
+              exclude: /(node_modules)/,
+
+              loader: 'babel-loader',
+
+              query: {
+                presets: ['@babel/preset-env', '@babel/preset-react'],
+              },
+            },
+          ],
+        },
         output: {
           filename: '[name].js',
         },
